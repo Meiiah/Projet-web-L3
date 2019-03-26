@@ -1,3 +1,46 @@
 .page-container{
 	padding-top: 5%;
 }
+.overview-item--c1 {
+	/**background: #CC1F2E;**/
+	background: #1D3C4C
+}
+
+.overview-item--c2 {
+	background: #CC1F2E;
+
+
+}
+
+.overview-item--c3 {
+	background: #132833;
+}
+
+.overview-item--c4 {
+	background: #D4D036;
+	
+}
+
+.au-btn--submit {
+	background:#CC1F2E;
+}
+
+.title-1 {
+	color : #1D3C4C;
+}
+
+.dot--blue {
+	background: #7F040F;
+}
+
+.dot--green {
+	background:#CC1F2E;
+}
+
+.au-card--bg-blue{
+	background: #132833;
+}
+
+.table-earning thead th{
+	background: #132833;
+}

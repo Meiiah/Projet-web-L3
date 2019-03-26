@@ -11,7 +11,7 @@
       var myChart = new Chart(ctx, {
         type: 'line',
         data: {
-          labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+          labels: ['J2', 'February', 'March', 'April', 'May', 'June', 'July'],
           type: 'line',
           datasets: [{
             data: [78, 81, 80, 45, 34, 12, 40],
@@ -77,7 +77,7 @@
       var myChart = new Chart(ctx, {
         type: 'line',
         data: {
-          labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+          labels: ['J3', 'February', 'March', 'April', 'May', 'June'],
           type: 'line',
           datasets: [{
             data: [1, 18, 9, 17, 34, 22],
@@ -148,7 +148,7 @@
       var myChart = new Chart(ctx, {
         type: 'line',
         data: {
-          labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+          labels: ['J4', 'February', 'March', 'April', 'May', 'June'],
           type: 'line',
           datasets: [{
             data: [65, 59, 84, 84, 51, 55],
@@ -210,7 +210,7 @@
       });
     }
 
-
+//GRAPHIQUE UTILISE ----------------------------------------------------------
     //WidgetChart 4
     var ctx = document.getElementById("widgetChart4");
     if (ctx) {
@@ -249,12 +249,12 @@
     }
 
     // Recent Report
-    const brandProduct = 'rgba(0,181,233,0.8)'
-    const brandService = 'rgba(0,173,95,0.8)'
+    const retweet = 'rgba(204,31,46,0.8)'
+    const jaime = 'rgba(127,4,15,0.8)'
 
     var elements = 10
-    var data1 = [52, 60, 55, 50, 65, 80, 57, 70, 105, 115]
-    var data2 = [102, 70, 80, 100, 56, 53, 80, 75, 65, 90]
+    var data1 = [52, 60, 55, 50, 65]
+    var data2 = [102, 70, 80, 100, 56]
 
     var ctx = document.getElementById("recent-rep-chart");
     if (ctx) {
@@ -262,11 +262,11 @@
       var myChart = new Chart(ctx, {
         type: 'line',
         data: {
-          labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', ''],
+          labels: ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi'],
           datasets: [
             {
-              label: 'My First dataset',
-              backgroundColor: brandService,
+              label: 'Nombre de j\'aime',
+              backgroundColor: jaime,
               borderColor: 'transparent',
               pointHoverBackgroundColor: '#fff',
               borderWidth: 0,
@@ -274,8 +274,8 @@
 
             },
             {
-              label: 'My Second dataset',
-              backgroundColor: brandProduct,
+              label: 'Nombre de retweet',
+              backgroundColor: retweet,
               borderColor: 'transparent',
               pointHoverBackgroundColor: '#fff',
               borderWidth: 0,
@@ -294,7 +294,7 @@
             xAxes: [{
               gridLines: {
                 drawOnChartArea: true,
-                color: '#f2f2f2'
+                color: '#f1f1f1'
               },
               ticks: {
                 fontFamily: "Poppins",
@@ -409,7 +409,7 @@
       var myChart = new Chart(ctx, {
         type: 'line',
         data: {
-          labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', ''],
+          labels: ['J1', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', ''],
           datasets: [
             {
               label: 'My First dataset',
@@ -503,7 +503,7 @@
       var myChart = new Chart(ctx, {
         type: 'line',
         data: {
-          labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', ''],
+          labels: ['J6', 'February', 'March', 'April', 'May', 'June', 'July', ''],
           datasets: [
             {
               label: 'My First dataset',
@@ -1291,13 +1291,13 @@
       vmap.vectorMap( {
         map: 'world_en',
         backgroundColor: null,
-        color: '#ffffff',
+        color: '#CC1F2E',
         hoverOpacity: 0.7,
-        selectedColor: '#1de9b6',
+        selectedColor: '#B21B28',
         enableZoom: true,
         showTooltip: true,
         values: sample_data,
-        scaleColors: [ '#1de9b6', '#03a9f5'],
+        scaleColors: [ '#4C0C11', '#D92131'],
         normalizeFunction: 'polynomial'
       });
     }
@@ -1313,7 +1313,7 @@
     if(vmap1[0]) {
       vmap1.vectorMap( {
         map: 'europe_en',
-        color: '#007BFF',
+        color: '#D4D036',
         borderColor: '#fff',
         backgroundColor: '#fff',
         enableZoom: true,
@@ -1384,7 +1384,7 @@
     if(vmap4[0]) {
       vmap4.vectorMap( {
         map: 'france_fr',
-        color: '#007BFF',
+        color: '#1D3C4C',
         borderColor: '#fff',
         backgroundColor: '#fff',
         enableZoom: true,
