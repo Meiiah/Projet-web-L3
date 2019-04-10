@@ -53,8 +53,10 @@ function datestring () {
        console.log(reply.statuses[i].user.profile_sidebar_fill_color);
        console.log("nb Jaime:")
        console.log(reply.statuses[i].favorite_count);
+       var like = reply.statuses[i].favorite_count;
        console.log("nb retweet:");
        console.log(reply.statuses[i].retweet_count);
+       var rt = reply.statuses[i].retweet_count;
        console.log("nb de tweeet que tu as fais:")
 
        console.log(reply.statuses[i].user.statuses_count);
@@ -88,3 +90,11 @@ function handleError(err) {
   console.error('response status:', err.statusCode);
   console.error('data:', err.data);
 }
+
+
+var map = new Microsoft.Maps.Map(document.getElementById('myMap'), {});
+map.setView({
+    mapTypeId: Microsoft.Maps.MapTypeId.aerial,
+    center: new Microsoft.Maps.Location(35.027222, -111.0225),
+    zoom: 15
+});
