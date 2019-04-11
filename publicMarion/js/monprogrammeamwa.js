@@ -1,8 +1,10 @@
-var Bot = require('./programme');
+
+var Bot = require('../js/programme');
 var config1 = require('../data/node_modules/twit/config1');
 var bot = new Bot(config1);
-var jsonfile = require('jsonfile')
+var jsonfile = require('jsonfile');
 
+// window.alert("pouet");
 
 //Notre identifiant tweeter
 var notreId = '1105484789044465665'
@@ -43,7 +45,7 @@ function datestring () {
     // console.log(reply)
 
     if(err) return handleError(err)
-
+    data.push({'nbTweet' : reply.statuses[0].user.statuses_count});
      for (var i = 0; i < reply.statuses.length; i++) {
 
        // console.log("Localisation:")
@@ -66,15 +68,21 @@ function datestring () {
        // console.log(reply.statuses[i].user.profile_sidebar_fill_color);
        // console.log("nb Jaime:")
        // console.log(reply.statuses[i].favorite_count);
-       boite.push({'nbJaime': reply.statuses[i].favorite_count})
+       boite.push({'nbJaime': reply.statuses[i].favorite_count});
   //     console.log("nb retweet;");
-       boite.push({'nbRetweet': reply.statuses[i].retweet_count})
+       boite.push({'nbRetweet': reply.statuses[i].retweet_count});
     //   console.log(reply.statuses[i].retweet_count);
   ///     console.log("nb de tweeet que tu as fais:")
     //   console.log(reply.statuses[i].user.statuses_count);
+
   //     console.log("date");
-    //   console.log(reply.statuses[i].created_at);
+       console.log(reply.statuses[i].created_at);
+       boite.push({'date': reply.statuses[i].created_at});
+       console.log(reply.statuses[i].extended_tweet);
+
     //  console.log(reply.statuses[i].quote_count);
+    //retweet cité
+  //  console.log(reply.statuses[i].quoted_status);
       data.push(boite);
       boite=[];
       }
