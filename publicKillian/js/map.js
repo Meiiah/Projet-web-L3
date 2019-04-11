@@ -1,7 +1,26 @@
+//fichier json
+var json = "../json/data.json";
+var ville = [];
+
+
+function localisation(){
+	$.getJSON( json, function( data){
+    data = JSON.parse(data);
+    for (i = 0; i < data.length; i++) {
+      ville[i] =  data[i][infoTweet.LOCALISATION];
+    }
+  });
+}
+
 function loadMapScenario() {
     var searchManager;
     var map = new Microsoft.Maps.Map(document.getElementById('myMap'), {});
-    search(map, 'Le Mans, France');
+    
+    //tableau des localisations des tweets
+    for (i = 0; i < ville.length; i++) {
+      search(map, ville[i].toString());
+  	}
+    
     
     function search(map, query) {
     //Create an instance of the search manager and perform the search.
@@ -24,16 +43,10 @@ function loadMapScenario() {
                     map.entities.push(pins);
                     //Display list of results
                     document.getElementById('printoutPanel').innerHTML = output;
-                    //Determine a bounding box to best view the results.
-                    var bounds;
-                    if (r.results.length == 1) {
-                        bounds = r.results[0].bestView;
-                    }
-                    else {
-                    //Use the locations from the results to calculate a bounding box.
-                        bounds = Microsoft.Maps.LocationRect.fromLocations(locs);
-                    }
-                    map.setView({ bounds: bounds });
+
+                    map.setView({
+                    	center: new Microsoft.Maps.Location(46.1309429,-2.446981),
+                    	zoom: 5 });
                 }
             },
             errorCallback: function (e) {
@@ -44,5 +57,8 @@ function loadMapScenario() {
         //Make the geocode request.
         searchManager.geocode(searchRequest);
     }
+  	map.setView({
+        center: new Microsoft.Maps.Location(46.1309429,-2.446981),
+        zoom: 5 });
                                 
 }
